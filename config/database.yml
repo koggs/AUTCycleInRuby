@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: Acceptance-Unit_test_cycle_in_Ruby_development
+
+test: &test
+  <<: *default
+  database: Acceptance-Unit_test_cycle_in_Ruby_test
+
+production:
+  <<: *default
+  database: Acceptance-Unit_test_cycle_in_Ruby_production
+  username: Acceptance-Unit_test_cycle_in_Ruby
+  password: <%= ENV['ACCEPTANCE-UNIT_TEST_CYCLE_IN_RUBY_DATABASE_PASSWORD'] %>
+
+cucumber:
+  <<: *test
