@@ -8,6 +8,9 @@ Given("I visit the site") do
   
   Given("the following articles exist") do |table|
     table.hashes.each do |article|
-    FactoryBot.create(:article, article)
+      # binding.pry
+      #I can check what article is
+      # {"title"=>"A breaking news item", "content"=>"Some really breaking action", "author"=>"Thomas"}
+      FactoryBot.create(:article, article)
   end
 end

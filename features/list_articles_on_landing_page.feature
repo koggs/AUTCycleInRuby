@@ -3,12 +3,12 @@ Feature: List articles on landing page
   when I visit the application's landing page,
   I would like to see a list of articles
 
- 
- Background:
+
+  Background:
     Given the following articles exist
-      | title                              | content                                       | author   |
-      | A breaking news item     | Some really breaking action         | Thomas |
-      | Learn Rails 5                  | Build awesome rails applications  | Faraz     |
+      | title                | content                          | author |
+      | A breaking news item | Some really breaking action      | Thomas |
+      | Learn Rails 5        | Build awesome rails applications | Faraz  |
 
   Scenario: Viewing list of articles on application's landing page
     When I am on the landing page
@@ -18,3 +18,5 @@ Feature: List articles on landing page
     And I should see "Learn Rails 5"
     And I should see "Build awesome rails applications"
     And I should see "by Faraz at 2018-05-04"
+
+#The date will not work tomorrow because it's hardcoded on today
