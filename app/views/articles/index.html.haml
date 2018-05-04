@@ -1,3 +1,4 @@
 -@articles.each do |article|
     %h1= article.title
     %p= article.content   
+    %p Written by #{article.author} at #{article.created_at} 
