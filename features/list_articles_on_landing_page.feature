@@ -4,7 +4,7 @@ Feature: List articles on the landing page
   I would like to see a list of all articles when I visit the News Service
 
   Background: User can view list of articles
-    Given the followin articles exist in the database
+    Given the following articles exist in the database
         | title                    | content             |
         | A breaking news article! | Lorem ipsum...      |
         | Another article!         | Lorem ipsum dolor...|
