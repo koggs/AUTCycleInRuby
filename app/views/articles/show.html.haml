@@ -12,9 +12,10 @@
   %p
     %strong Commenter:
     = comment.commenter
-  %p 
-    %strong Email:
-    = comment.email
+  - if comment.email  
+    %p 
+      %strong Email:
+      = comment.email
   %p
     %strong Comment:
     = comment.body
