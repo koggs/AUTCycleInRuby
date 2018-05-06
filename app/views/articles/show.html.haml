@@ -1,0 +1,46 @@
+%p
+  %strong Title:
+  = @article.title
+%p
+  %strong Author:
+  = @article.author
+%p
+  %strong Text:
+  = @article.content
+%h2 Comments
+- @article.comments.each do |comment|
+  %p
+    %strong Commenter:
+    = comment.commenter
+  %p 
+    %strong Email:
+    = comment.email
+  %p
+    %strong Comment:
+    = comment.body
+    
+%h2 Add a comment:
+= form_with(model: [ @article, @article.comments.build ], local: true) do |form|
+  - unless @comment == nil
+    - if @comment.errors.any?
+      #error_explanation
+        %h2
+          = pluralize(@comment.errors.count, 'error')
+        %ul
+          - @comment.errors.full_messages.each do |msg|
+            %li= msg
+  %p
+    = form.label :commenter
+    %br
+    = form.text_field :commenter, placeholder: 'Name'
+  %p
+    = form.label :body
+    %br
+    = form.text_field :body, placeholder: 'Comment', rows: 5, cols: 10
+  %p
+    = form.label :email
+    %br
+    = form.text_field :email, placeholder: 'Email', type: 'email'
+  %p
+    = form.submit
+= link_to 'Back', articles_path

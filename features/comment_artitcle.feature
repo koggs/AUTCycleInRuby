@@ -21,13 +21,12 @@ Scenario: User leaves a field empty [Sad Path]
   And I fill in "Name" with ""
   And I fill in "Comment" with ""
   When I click "Create Comment" button
-  Then I should see "Comment can't be blank"
-  And I should see "Comment is too short" 
-  And I should see "Name can't be blank"
+  Then I should see "Commenter can't be blank" 
+  And I should see "Body can't be blank"
 
   Scenario: User leaves an email
     Given I click "Show" button
-    And I fill in "Name" with "Magnus"
+    And I fill in "Name" with "Agnes"
     And I fill in "Comment" with "This is my comment"
     And I fill in "Email" with "agnes@test.com"
     When I click "Create Comment" button
